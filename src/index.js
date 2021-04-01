@@ -12,31 +12,15 @@ refs.inputImages.addEventListener(
     newApiService.query = refs.inputImages.value;
     newApiService.resetPage();
     refs.imagesInfo.innerHTML = ' ';
-    //newApiService.fetchArticles();
     newApiService.fetchArticles().then(images => updateImageMarkup(images));
-    //resetPages();
-    //fetchImages(input).then(images => updateImageMarkup(images));
-
-    
   }, 1000),
 );
 
 window.addEventListener('scroll', () => {
-      if (
-        window.scrollY + window.innerHeight >=
-        document.documentElement.scrollHeight
-      ) {
-        //fetchImages(input).then(images => updateImageMarkup(images));
-        newApiService.fetchArticles().then(images => updateImageMarkup(images));
-      }
-    });
-
-//refs.inputImages.addEventListener('input', onSearch);
-
-//function onSearch(e) {
-//  e.preventDefault();
-//  const input = refs.inputImages.value;
-//  refs.imagesInfo.innerHTML = ' ';
-//  console.log(input);
-//  newApiService.fetchArticles().then(images => updateImageMarkup(images));
-//}
+  if (
+    window.scrollY + window.innerHeight >=
+    document.documentElement.scrollHeight
+  ) {
+    newApiService.fetchArticles().then(images => updateImageMarkup(images));
+  }
+});
