@@ -17,7 +17,11 @@ refs.inputImages.addEventListener(
     //resetPages();
     //fetchImages(input).then(images => updateImageMarkup(images));
 
-    window.addEventListener('scroll', () => {
+    
+  }, 1000),
+);
+
+window.addEventListener('scroll', () => {
       if (
         window.scrollY + window.innerHeight >=
         document.documentElement.scrollHeight
@@ -26,8 +30,6 @@ refs.inputImages.addEventListener(
         newApiService.fetchArticles().then(images => updateImageMarkup(images));
       }
     });
-  }, 1000),
-);
 
 //refs.inputImages.addEventListener('input', onSearch);
 
